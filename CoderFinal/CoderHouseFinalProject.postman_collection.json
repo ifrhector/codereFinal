@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "69b9247b-1f05-4515-a207-9d8dfcfc3c72",
+		"name": "CoderHouseFinalProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "584322"
+	},
+	"item": [
+		{
+			"name": "DateTime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.timezonedb.com/v2.1/get-time-zone?key=KOQS3ULCJUI5&format=json&by=position&lat=19.42847&lng=-99.12766",
+					"protocol": "http",
+					"host": [
+						"api",
+						"timezonedb",
+						"com"
+					],
+					"path": [
+						"v2.1",
+						"get-time-zone"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "KOQS3ULCJUI5"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "by",
+							"value": "position"
+						},
+						{
+							"key": "lat",
+							"value": "19.42847"
+						},
+						{
+							"key": "lng",
+							"value": "-99.12766"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDateFromRestTemplate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/date/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"date",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientGetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/client/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clientName\": \"Casa Cosaco\",\n    \"country\": \"MX\",\n    \"active\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/client/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientSave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clientName\": \"Guadalupe Vizcaina\",\n    \"country\": \"MX\",\n    \"active\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/client/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientsGetOrdersByIdClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/client/orders/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client",
+						"orders",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersSave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"orderIdentifier\": \"\",\n        \"makeDateOrder\": \"\",\n        \"updateDateOrder\": \"\",\n        \"canceledDateOrder\": null,\n        \"notes\": \"Una nota\",\n        \"client\": {\n            \"id\": 3,\n            \"clientName\": \"Guadalupe Vizcaina\",\n            \"country\": \"MX\",\n            \"active\": true\n        },\n        \"statusId\": {\n            \"id\": 1,\n            \"description\": \"Abierto\"\n        },\n        \"total\": 0.0\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersGetByClientId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders/client/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"client",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersGetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"orderIdentifier\": \"wbTTVtNxyG\",\n        \"makeDateOrder\": \"2024-04-17T23:40:15\",\n        \"updateDateOrder\": \"2024-04-17T23:40:15\",\n        \"canceledDateOrder\": null,\n        \"notes\": \"Se cancela por pruebas\",\n        \"client\": {\n            \"id\": 3,\n            \"clientName\": \"Guadalupe Vizcaina\",\n            \"country\": \"MX\",\n            \"active\": true\n        },\n        \"statusId\": {\n            \"id\": 2,\n            \"description\": \"Cancelado\"\n        },\n        \"total\": 0.0\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersProductsSave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\" : {\n        \"id\": 3,\n        \"orderIdentifier\": \"DenXYvXE6L\",\n        \"makeDateOrder\": \"2024-04-18T00:29:48\",\n        \"updateDateOrder\": \"2024-04-18T00:29:48\",\n        \"canceledDateOrder\": null,\n        \"notes\": \"Pedido para entregar el sábado 20 de abril de 2024\",\n        \"client\": {\n            \"id\": 3,\n            \"clientName\": \"Guadalupe Vizcaina\",\n            \"country\": \"MX\",\n            \"active\": true\n        },\n        \"statusId\": {\n            \"id\": 1,\n            \"description\": \"Abierto\"\n        },\n        \"total\": 0.0\n    },\n    \"product\":{\n        \"id\": 9,\n        \"description\": \"Mezcal de gusano reposado\",\n        \"price\": 760.56,\n        \"stock\": 6\n    },\n    \"quantity\":15,\n    \"price\":0,\n    \"total\":0,\n    \"movementDate\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/op/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"op",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersProductsGetByIdClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/op/cli/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"op",
+						"cli",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductsGetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/prods/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prods",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersProductsPut",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": {\n        \"id\": 3,\n        \"orderIdentifier\": \"DenXYvXE6L\",\n        \"makeDateOrder\": \"2024-04-18T00:29:48\",\n        \"updateDateOrder\": \"2024-04-18T00:29:48\",\n        \"canceledDateOrder\": null,\n        \"notes\": \"Pedido para entregar el sábado 20 de abril de 2024\",\n        \"client\": {\n            \"id\": 3,\n            \"clientName\": \"Guadalupe Vizcaina\",\n            \"country\": \"MX\",\n            \"active\": true\n        },\n        \"statusId\": {\n            \"id\": 1,\n            \"description\": \"Abierto\"\n        },\n        \"total\": 0.0\n    },\n    \"product\":{\n        \"id\": 9,\n        \"description\": \"Mezcal de gusano reposado\",\n        \"price\": 760.56,\n        \"stock\": 1\n    },\n    \"quantity\":10,\n    \"price\":0,\n    \"total\":0,\n    \"movementDate\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/op/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"op",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
